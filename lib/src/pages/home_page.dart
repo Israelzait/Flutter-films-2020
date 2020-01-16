@@ -4,6 +4,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:peliculas_2020/src/search/search_delegate.dart';
 import 'package:peliculas_2020/src/widgets/movie_horizontal.dart';
 
 import '../providers/peliculas_provider.dart';
@@ -31,7 +32,18 @@ class HomePage extends StatelessWidget {
         actions: <Widget>[
           IconButton(
            icon : Icon(Icons.search),
-           onPressed:(){},
+           onPressed:(){
+             showSearch( 
+               context: context,
+               delegate: DataSearch(),
+              //  query: 'Hola'   
+                // puedo usar este query para poner 
+                  // una palabra predeterminada en el 
+                    // search
+
+              );
+
+           },
             
           )
         ],
@@ -49,6 +61,7 @@ class HomePage extends StatelessWidget {
       )
     );
   }
+  
       Widget _swiperTarjetas () {
 
 
